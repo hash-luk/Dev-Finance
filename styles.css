@@ -57,7 +57,7 @@ header #logo-image:hover {
 
 .container {
     width: min(90vw, 800px) ;
-    margin: auto;
+    margin: 30px auto;
 }
 
 /* CSS trick for screen readers */
@@ -235,6 +235,7 @@ button:hover {
     justify-content: center;
     opacity: 0;
     visibility: hidden;
+    z-index: 500;
 }
 
 .modal-overlay.active {
