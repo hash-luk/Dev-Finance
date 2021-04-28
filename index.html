@@ -1,97 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dev Finance$</title>
-    <link rel="icon" href="./assets/favicon.ico" type="x-icon">
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <header>
-      <div class="logos">
-        <img src="./assets/logo.svg" alt="Logo texto" />
-        <img id="logo-image" src="./assets/Imagelogo.png" alt="Logo imagem" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Finance$</title>
+  <link rel="icon" href="./assets/favicon.ico" type="x-icon">
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <div class="logos">
+      <img src="./assets/logo.svg" alt="Logo texto" />
+      <img id="logo-image" src="./assets/Imagelogo.png" alt="Logo imagem" />
+    </div>
+  </header>
+  <main class="container">
+    <section id="balance">
+      <h2 class="sr-only">Balanço</h2>
+      <div class="card">
+        <h3>
+          <span>Entradas</span>
+          <img src="./assets/income.svg" alt="Imagem entradas" />
+        </h3>
+        <p>R$ 5.000,00</p>
       </div>
-    </header>
-    <main class="container">
-      <section id="balance">
-        <h2 class="sr-only">Balanço</h2>
-        <div class="card">
-          <h3>
-            <span>Entradas</span>
-            <img src="./assets/income.svg" alt="Imagem entradas" />
-          </h3>
-          <p>R$ 5.000,00</p>
-        </div>
 
-        <div class="card">
-          <h3>
-            <span>Saídas</span>
-            <img src="./assets/expense.svg" alt="Imagem saídas" />
-          </h3>
-          <p>R$ 2.000,00</p>
-        </div>
+      <div class="card">
+        <h3>
+          <span>Saídas</span>
+          <img src="./assets/expense.svg" alt="Imagem saídas" />
+        </h3>
+        <p>R$ 2.000,00</p>
+      </div>
 
-        <div class="card total">
-          <h3>
-            <span>Total</span>
-            <img src="./assets/total.svg" alt="Imagem total" />
-          </h3>
-          <p>R$ 3.000,00</p>
-        </div>
-      </section>
+      <div class="card total">
+        <h3>
+          <span>Total</span>
+          <img src="./assets/total.svg" alt="Imagem total" />
+        </h3>
+        <p>R$ 3.000,00</p>
+      </div>
+    </section>
 
-      <section id="transaction">
-        <h2 class="sr-only">Transações</h2>
-        <a href="#" class="button new">Nova transação</a>
-        <table id="data-table">
-          <thead>
-            <tr>
-              <th>Descrição</th>
-              <th>Valor</th>
-              <th>Data</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="description">Conta de Luz</td>
-              <td class="expense">- R$200,00</td>
-              <td class="date">02/02/2021</td>
-              <td>
-                <img src="./assets/minus.svg" alt="Remover trasação" />
-              </td>
-            </tr>
-            <tr>
-              <td class="description">Criação de website</td>
-              <td class="income">+ R$700,00</td>
-              <td class="date">10/01/2021</td>
-              <td>
-                <img src="./assets/minus.svg" alt="Remover trasação" />
-              </td>
-            </tr>
-            <tr>
-              <td class="description">Conta de internet</td>
-              <td class="expense">- R$199,00</td>
-              <td class="date">15/02/2021</td>
-              <td>
-                <img src="./assets/minus.svg" alt="Remover trasação" />
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-    </main>
-    <footer>
-      <p>2021 - Lucas</p>
-    </footer>
-  </body>
+    <section id="transaction">
+      <h2 class="sr-only">Transações</h2>
+      <a href="#" class="button new">Nova transação</a>
+      <table id="data-table">
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="description">Conta de Luz</td>
+            <td class="expense">- R$200,00</td>
+            <td class="date">02/02/2021</td>
+            <td>
+              <img src="./assets/minus.svg" alt="Remover trasação" />
+            </td>
+          </tr>
+          <tr>
+            <td class="description">Criação de website</td>
+            <td class="income">+ R$700,00</td>
+            <td class="date">10/01/2021</td>
+            <td>
+              <img src="./assets/minus.svg" alt="Remover trasação" />
+            </td>
+          </tr>
+          <tr>
+            <td class="description">Conta de internet</td>
+            <td class="expense">- R$199,00</td>
+            <td class="date">15/02/2021</td>
+            <td>
+              <img src="./assets/minus.svg" alt="Remover trasação" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <div class="modal-overlay active">
+    <div class="modal">
+      <div id="form">
+        <h2>Nova transação</h2>
+        <form action="">
+          <div class="input-group">
+            <label class="sr-only" for="description">Descrição</label>
+            <input type="text" name="description" id="description" placeholder="Descrição">
+          </div>
+          <div class="input-group">
+            <label class="sr-only" for="amount">Valor</label>
+            <input type="number" name="amount" id="amount" placeholder="R$0,00" step="0.01">
+            <small>Use o sinal - (negativo) para despesas e , (virgula) para casas decimais</small>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>2021 - Lucas - dev.finance</p>
+  </footer>
+</body>
+
 </html>
