@@ -51,7 +51,7 @@
 
     <section id="transaction">
       <h2 class="sr-only">Transações</h2>
-      <a href="#" class="button new" onclick="modal.openModal()">+ Nova transação</a>
+      <a href="#" class="button new" onclick="Modal.toggleModal()">+ Nova transação</a>
       <table id="data-table">
         <thead>
           <tr>
@@ -62,35 +62,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="description">Conta de Luz</td>
-            <td class="expense">- R$200,00</td>
-            <td class="date">02/02/2021</td>
-            <td>
-              <img src="./assets/minus.svg" alt="Remover trasação" />
-            </td>
-          </tr>
-          <tr>
-            <td class="description">Criação de website</td>
-            <td class="income">+ R$700,00</td>
-            <td class="date">10/01/2021</td>
-            <td>
-              <img src="./assets/minus.svg" alt="Remover trasação" />
-            </td>
-          </tr>
-          <tr>
-            <td class="description">Conta de internet</td>
-            <td class="expense">- R$199,00</td>
-            <td class="date">15/02/2021</td>
-            <td>
-              <img src="./assets/minus.svg" alt="Remover trasação" />
-            </td>
-          </tr>
         </tbody>
       </table>
     </section>
   </main>
-  <div class="modal-overlay">
+  <div class="modal-overlay ">
     <div class="modal">
       <div id="form">
         <h2>Nova transação</h2>
@@ -109,7 +85,7 @@
             <input type="date" name="date" id="date">
           </div>
           <div class="input-group actions">
-            <a href="#" class="button cancel" onclick="modal.close()">Cancelar</a>
+            <a href="#" class="button cancel" onclick="Modal.toggleModal()">Cancelar</a>
             <button>Salvar</button>
           </div>
         </form>
