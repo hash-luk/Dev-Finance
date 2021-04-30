@@ -176,6 +176,10 @@ td.expense {
     color: var(--money-expanse);
 }
 
+#minus {
+    cursor: pointer;
+}
+
 /* ----------------Links and Buttons--------------- */
 
 a {
