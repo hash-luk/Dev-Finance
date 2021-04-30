@@ -4,26 +4,20 @@ const Modal = {
   },
 };
 
-const transactionsList = [
-  {
-    description: "Luz",
-    amount: -50000,
-    date: "23/01/2021",
+const Storage = {
+  get() {
+    return JSON.parse(localStorage.getItem("dev.fincances:transactions")) || [];
   },
-  {
-    description: "Criaçao Website",
-    amount: 70000,
-    date: "23/01/2021",
+  set(transactions) {
+    localStorage.setItem(
+      "dev.fincances:transactions",
+      JSON.stringify(transactions)
+    );
   },
-  {
-    description: "internet",
-    amount: 20000,
-    date: "23/01/2021",
-  },
-];
+};
 
 const Transaction = {
-  all: transactionsList,
+  all: Storage.get(),
   add(transaction) {
     Transaction.all.push(transaction);
     App.reload();
@@ -63,12 +57,13 @@ const DOM = {
 
   addTransaction(transaction, index) {
     const tr = document.createElement("tr");
-    tr.innerHTML = DOM.innerHTMLTransaction(transaction);
+    tr.innerHTML = DOM.innerHTMLTransaction(transaction, index);
+    tr.dataset.index = index;
 
     DOM.transactionContainer.appendChild(tr);
   },
 
-  innerHTMLTransaction(transaction) {
+  innerHTMLTransaction(transaction, index) {
     const CSSclass = transaction.amount > 0 ? "income" : "expense";
 
     const amount = Utils.formatCurrency(transaction.amount);
@@ -78,7 +73,7 @@ const DOM = {
             <td class="${CSSclass}">${amount}</td>
             <td class="date">${transaction.date}</td>
             <td>
-              <img id="minus" src="./assets/minus.svg" alt="Remover trasação" />
+              <img onclick="Transaction.remove(${index})" id="minus" src="./assets/minus.svg" alt="Remover trasação" />
             </td>
         `;
 
@@ -102,7 +97,7 @@ const DOM = {
 
 const Utils = {
   formatAmount(value) {
-    value = Number(value) * 100;
+    value = Number(value.replace(/\,\./g, "")) * 100;
     return value;
   },
   formatDate(date) {
@@ -167,22 +162,25 @@ const Form = {
   },
 
   clearFields() {
-    Form.description.value =""
-    Form.amount.value =""
-    Form.date.value =""
+    Form.description.value = "";
+    Form.amount.value = "";
+    Form.date.value = "";
   },
 
   submit(event) {
     event.preventDefault();
     try {
-      Form.validateFields();//validate input
+      Form.validateFields(); //validate input
 
-      const Transaction = Form.formatValues();//format input data
+      const transaction = Form.formatValues(); //format input data
 
-      Form.saveData(transaction);//save form
+      Form.saveData(transaction); //save form
 
-      Form.clearFields();
+      Form.clearFields(); //clear the fields
 
+      Modal.toggleModal(); //close modal
+
+      App.reload(); //reload app
     } catch (error) {
       alert(error.message);
     }
@@ -191,9 +189,11 @@ const Form = {
 
 const App = {
   init() {
-    Transaction.all.forEach((transaction) => {
-      DOM.addTransaction(transaction);
-    });
+    Transaction.all.forEach(DOM.addTransaction);
+
+    DOM.updtadeBalance();
+
+    Storage.set(Transaction.all);
   },
   reload() {
     DOM.clearTransanctions();
@@ -202,12 +202,3 @@ const App = {
 };
 
 App.init();
-
-DOM.updtadeBalance();
-
-Transaction.add({
-  id: 39,
-  description: "Alo",
-  amount: 200,
-  date: "23/01/2021",
-});
