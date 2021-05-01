@@ -1,0 +1,43 @@
+@import "./colors";
+
+header {
+  background: $moss-green;
+  padding: 2rem 0 10rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+}
+
+header #logo-image {
+  display: none;
+}
+
+header #logo-image:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+@media (min-width: 800px) {
+  header #logo-image {
+    display: block;
+    width: 60px;
+    height: 60px;
+    /* margin-right: 100px; */
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 800px;
+  }
+}

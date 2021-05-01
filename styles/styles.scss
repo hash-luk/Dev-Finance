@@ -1,0 +1,35 @@
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+@import "./partials/colors";
+@import "./partials/header";
+@import "./partials/main-screen";
+@import "./partials/buttons";
+@import "./partials/form";
+@import "./partials/table";
+@import "./partials/modal";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 93.75%;
+}
+
+body {
+  background: $white-gray;
+  font-family: "Poppins", sans-serif;
+}
+
+footer {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  color: $dark-blue;
+  opacity: 0.8;
+}
