@@ -60,7 +60,16 @@ const DOM = {
     tr.innerHTML = DOM.innerHTMLTransaction(transaction, index);
     tr.dataset.index = index;
 
+    if (transaction.amount > 0) {
+      tr.classList.add("incomerow");
+      tr.style.display = "table-row";
+    } else {
+      tr.classList.add("expenserow");
+      tr.style.display = "table-row";
+    }
+
     DOM.transactionContainer.appendChild(tr);
+    return tr;
   },
 
   innerHTMLTransaction(transaction, index) {
@@ -182,7 +191,7 @@ const Form = {
 
       App.reload(); //reload app
     } catch (error) {
-      alert(error.message);
+      $('div.warning-bar').fadeIn(300).delay(1500).fadeOut(300)
     }
   },
 };
@@ -202,3 +211,4 @@ const App = {
 };
 
 App.init();
+

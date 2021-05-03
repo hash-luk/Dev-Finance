@@ -77,6 +77,17 @@ header #logo-image:hover {
   }
 }
 
+.warning-bar {
+  background-color: #ff1100;
+  width: 100%;
+  height: 25px;
+  text-align: center;
+  color: #fff;
+  position: fixed;
+  display: none;
+  z-index: 501;
+}
+
 .container {
   max-width: 800px;
   margin: 30px auto;
@@ -335,7 +346,6 @@ td.expense {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  opacity: 0;
   visibility: hidden;
   z-index: 500;
 }
