@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="dark-mode">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,20 +16,18 @@
 
   <body>
     <div class="warning-bar">
-      <p>
-        Por favor,preencha todos os campos
-      </p>
+      <p>Por favor,preencha todos os campos</p>
     </div>
     <header>
       <div class="logos">
         <img src="./assets/logo.svg" alt="Logo texto" />
-        <img id="logo-image" src="./assets/Imagelogo.png" alt="Logo imagem" />
+        <a href="https://www.github.com/hash-luk"><img id="logo-image" src="./assets/Imagelogo.png" alt="Logo imagem"/></a>
       </div>
     </header>
     <main class="container">
       <section id="balance">
         <h2 class="sr-only">Balanço</h2>
-        <div class="card income" onclick="Card.showIncomesOnly()" >
+        <div class="card income" onclick="Card.showIncomesOnly()">
           <h3>
             <span>Entradas</span>
             <img src="./assets/income.svg" alt="Imagem entradas" />
@@ -115,9 +113,9 @@
       </div>
     </div>
     <footer>
-      <p>2021 - Lucas - dev.finance</p>
+      <p>2021 - Lucas - dev.finances</p>
     </footer>
-    <script src="scripts.js"></script>
+    <script src="./scripts/main-script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   </body>
 </html>

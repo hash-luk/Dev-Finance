@@ -108,7 +108,7 @@ const Card = {
     let expenseTR = document.querySelectorAll(".expenserow");
     let incomeTR = document.querySelectorAll(".incomerow");
 
-    for (let i = 0;i<expenseTR.length && i<incomeTR.length;i++){
+    for (let i = 0; i < expenseTR.length && i < incomeTR.length; i++) {
       expenseTR[i].style.display = "table-row";
       incomeTR[i].style.display = "none";
     }
@@ -118,18 +118,17 @@ const Card = {
     let expenseTR = document.querySelectorAll(".expenserow");
     let incomeTR = document.querySelectorAll(".incomerow");
 
-    for(let i = 0;i<expenseTR.length && i<incomeTR.length;i++){
+    for (let i = 0; i < expenseTR.length && i < incomeTR.length; i++) {
       expenseTR[i].style.display = "none";
       incomeTR[i].style.display = "table-row";
     }
-
   },
 
   showAllRows() {
     let expenseTR = document.querySelectorAll(".expenserow");
     let incomeTR = document.querySelectorAll(".incomerow");
 
-    for(let i = 0;i<expenseTR.length && i<incomeTR.length;i++){
+    for (let i = 0; i < expenseTR.length && i < incomeTR.length; i++) {
       expenseTR[i].style.display = "table-row";
       incomeTR[i].style.display = "table-row";
     }
