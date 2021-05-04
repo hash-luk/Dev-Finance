@@ -69,7 +69,6 @@ const DOM = {
     }
 
     DOM.transactionContainer.appendChild(tr);
-    return tr;
   },
 
   innerHTMLTransaction(transaction, index) {
@@ -101,6 +100,39 @@ const DOM = {
   },
   clearTransanctions() {
     DOM.transactionContainer.innerHTML = "";
+  },
+};
+
+const Card = {
+  showExpensesOnly() {
+    let expenseTR = document.querySelectorAll(".expenserow");
+    let incomeTR = document.querySelectorAll(".incomerow");
+
+    for (let i = 0;i<expenseTR.length && i<incomeTR.length;i++){
+      expenseTR[i].style.display = "table-row";
+      incomeTR[i].style.display = "none";
+    }
+  },
+
+  showIncomesOnly() {
+    let expenseTR = document.querySelectorAll(".expenserow");
+    let incomeTR = document.querySelectorAll(".incomerow");
+
+    for(let i = 0;i<expenseTR.length && i<incomeTR.length;i++){
+      expenseTR[i].style.display = "none";
+      incomeTR[i].style.display = "table-row";
+    }
+
+  },
+
+  showAllRows() {
+    let expenseTR = document.querySelectorAll(".expenserow");
+    let incomeTR = document.querySelectorAll(".incomerow");
+
+    for(let i = 0;i<expenseTR.length && i<incomeTR.length;i++){
+      expenseTR[i].style.display = "table-row";
+      incomeTR[i].style.display = "table-row";
+    }
   },
 };
 
@@ -191,7 +223,7 @@ const Form = {
 
       App.reload(); //reload app
     } catch (error) {
-      $('div.warning-bar').fadeIn(300).delay(1500).fadeOut(300)
+      $("div.warning-bar").fadeIn(300).delay(1500).fadeOut(300);
     }
   },
 };
@@ -211,4 +243,3 @@ const App = {
 };
 
 App.init();
-

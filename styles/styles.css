@@ -128,6 +128,7 @@ h2 {
   margin-bottom: 2rem;
   -webkit-transition: 0.1s ease-in;
   transition: 0.1s ease-in;
+  cursor: pointer;
 }
 
 .card:hover {
